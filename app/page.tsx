@@ -1,14 +1,20 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Menu } from "@/components/Menu";
+import { MenuItem } from "@/components/MenuItem";
 
 export default function Home() {
-  const message = "hello"
+  const Link ='https://www.amazon.com/'
+  const Text = 'Click me'
   return (
     <>
-    <img src="" alt="" />
-    <h1>
-      {message}
+    <h1 style={{
+      color:'red',
+    }}>
+      <a href={Link}>{Text}</a>
     </h1>
+
+    <Menu />
     </>
   );
 }
