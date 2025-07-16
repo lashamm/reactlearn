@@ -8,9 +8,7 @@ export default function Home() {
   const Text = 'Click me'
   return (
     <>
-    <h1 style={{
-      color:'red',
-    }}>
+    <h1 className={styles.back}>
       <a href={Link}>{Text}</a>
     </h1>
 
