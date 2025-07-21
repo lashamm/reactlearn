@@ -1,0 +1,14 @@
+.cont{
+    padding:17px 30px;
+    background-color: tomato;
+    display: inline;
+    cursor: pointer;
+    transition: 0.3s;
+    border:1px solid black;
+    border-radius: 8px;
+}
+
+.cont:hover{
+    transform: scale(1.1);
+    background-color:red;
+}
