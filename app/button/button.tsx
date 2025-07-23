@@ -9,9 +9,11 @@ type Props = {
 
 
 export default (props : Props) =>{
-    return(
-        <button className={style.cont}>
+    return(  
+        <body className={style.body}>
+            <button className={style.cont}>
                 {props.title}
         </button>
-)
+        </body>
+    )
 }
