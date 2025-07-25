@@ -20,5 +20,11 @@
     background-color:red;
 }
 .cont:active{
+    transition: none;
     background-color: rgb(99, 0, 0);
+}
+
+.cont:disabled{
+    background-color: grey;
+    cursor: none;
 }
