@@ -9,11 +9,23 @@ type Props = {
 
 
 export default (props : Props) =>{
+    
+    var cont = style.cont
+    var mode = style.cont
+
+    if(props.disabled == true){
+        cont = style.disable
+    }
+    if(props.mode == "clear"){
+        mode = style.clear
+    }
+    
     return(  
-        <main className={style.body}>
-            <button className={style.cont}>
+        <main className={`${cont} ${mode}`}>
+            <button className={cont}>
                 {props.title}
         </button>
         </main>
     )
 }
+

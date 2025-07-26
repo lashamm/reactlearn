@@ -28,3 +28,37 @@
     background-color: grey;
     cursor: none;
 }
+
+.disable{
+     padding:20px 70px;
+    background-color: grey;
+    display: inline;
+    cursor: pointer;
+    transition: 0.3s;
+    border:1px solid black;
+    border-radius: 8px;
+    color:white;
+    cursor:not-allowed;
+}
+
+
+.clear{
+    padding:20px 70px;
+    background-color: none;
+    display: inline;
+    cursor: pointer;
+    transition: 0.3s;
+    border:none;
+    border-bottom:1px solid black;
+    border-left: 1px solid black;
+    border-radius: 8px;
+    color:black;
+}
+.clear:hover{
+    transform: scale(1.1);
+    background-color:grey;
+}
+.clear:active{
+    transition: none;
+    background-color: darkgrey;
+}
