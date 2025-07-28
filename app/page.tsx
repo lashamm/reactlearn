@@ -10,7 +10,7 @@ import Button from "./Button/button";
 export default function Home() {
   return (
     <>
-    <Button title="hi" disabled={false} mode="fill"   />
+    <Button disabled={false} mode="fill"   />
     </>
   );
 }

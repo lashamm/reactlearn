@@ -1,8 +1,9 @@
 
+import { useState } from "react";
 import  style  from "./button.module.scss";
 
 type Props = {
-    title:string;
+    title?:string;
     mode?:string;
     disabled?:boolean;
 }
@@ -10,6 +11,12 @@ type Props = {
 
 export default (props : Props) =>{
     
+
+    var [counter, setCount] = useState(0)
+
+    const onClick = () => {
+        setCount(counter+1)
+    }
     var cont = style.cont
     var mode = style.cont
 
@@ -22,8 +29,8 @@ export default (props : Props) =>{
     
     return(  
         <main className={style.body}>
-            <button className={`${cont} ${mode}`}>
-                {props.title}
+            <button onClick={onClick} className={`${cont} ${mode}`}>
+                {counter}
         </button>
         </main>
     )
