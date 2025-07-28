@@ -21,8 +21,8 @@ export default (props : Props) =>{
     }
     
     return(  
-        <main className={`${cont} ${mode}`}>
-            <button className={cont}>
+        <main className={style.body}>
+            <button className={`${cont} ${mode}`}>
                 {props.title}
         </button>
         </main>

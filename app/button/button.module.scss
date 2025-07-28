@@ -40,23 +40,26 @@
     color:white;
     cursor:not-allowed;
 }
+.disable:hover{
+    transition: none !important;
+    transform: none !important;
+    background-color: grey !important;
+}
 
 
 .clear{
     padding:20px 70px;
-    background-color: none;
+    background-color: white;
     display: inline;
     cursor: pointer;
     transition: 0.3s;
-    border:none;
-    border-bottom:1px solid black;
-    border-left: 1px solid black;
+    border:1px solid black;
     border-radius: 8px;
     color:black;
 }
 .clear:hover{
     transform: scale(1.1);
-    background-color:grey;
+    background-color:yellow;
 }
 .clear:active{
     transition: none;
