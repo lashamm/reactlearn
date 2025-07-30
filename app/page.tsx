@@ -6,11 +6,13 @@ import { Menu } from "@/components/Menu";
 import { MenuItem } from "@/components/MenuItem";
 import Link from "next/link";
 import Button from "./Button/button";
+import TextInput from "./TextInput/textInput";
 
 export default function Home() {
   return (
     <>
     <Button disabled={false} mode="fill"   />
+    <TextInput />
     </>
   );
 }
