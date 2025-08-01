@@ -7,12 +7,14 @@ import { MenuItem } from "@/components/MenuItem";
 import Link from "next/link";
 import Button from "./Button/button";
 import TextInput from "./TextInput/textInput";
+import CheckBox from "./CheckBox/CheckBox";
 
 export default function Home() {
   return (
     <>
     <Button disabled={false} mode="fill"   />
     <TextInput />
+    <CheckBox />
     </>
   );
 }
