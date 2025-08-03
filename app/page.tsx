@@ -5,17 +5,12 @@ import styles from "./page.module.css";
 import { Menu } from "@/components/Menu";
 import { MenuItem } from "@/components/MenuItem";
 import Link from "next/link";
-import TextInput from "./TextInput/textInput";
-import CheckBox from "./CheckBox/CheckBox";
-import Todo from "./Todo/todo";
+import Button from "./Button/Button";
 
 export default function Home() {
   return (
     <>
-    {/* <Button disabled={false} mode="fill"   />
-    <TextInput />
-    <CheckBox /> */}
-    <Todo />
+    <Button />
     </>
   );
 }
