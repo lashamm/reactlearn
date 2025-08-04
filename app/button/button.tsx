@@ -6,18 +6,30 @@ import { resourceLimits } from "worker_threads";
 
 export default () => {
     const [data, setData] = useState([])
+    const [sort, setSort] = useState('asc')
+    const [limit, setLimit] = useState(20)
 
     const getProduct = () => {
-        axios.get('https://fakestoreapi.com/products')
+        axios.get(`https://fakestoreapi.com/products?sort=${sort}&limit=${limit}`)
         .then((res) => setData(res.data))
         .catch((err) => {
             console.error('error', err)})
         }
 
-        useEffect(getProduct, [])
+        useEffect(getProduct, [sort, limit])
 
         return(
             <>
+            <select value={sort} onChange={(e) => setSort(e.target.value)}>
+                <option value="asc">asc</option>
+                <option value="desc">dsc</option>
+            </select>
+
+            <input 
+                 type="number"
+                 value={limit}
+                 onChange={(e) => setLimit(Number(e.target.value))} />
+
             <button onClick={getProduct}>click for products</button>
             <ul>
                 {data.map((product: any) => (
@@ -30,7 +42,49 @@ export default () => {
     }
 
 
+// import { useEffect, useState } from "react";
+// import style from "./button.module.scss";
+// import axios from "axios";
 
+// export default () => {
+//   const [data, setData] = useState([]);
+//   const [sort, setSort] = useState("asc");
+//   const [limit, setLimit] = useState(20);
+
+//   const getProduct = () => {
+//     axios
+//       .get(`https://fakestoreapi.com/products?sort=${sort}&limit=${limit}`)
+//       .then((res) => setData(res.data))
+//       .catch((err) => {
+//         console.error("error", err);
+//       });
+//   };
+
+//   useEffect(getProduct, [sort, limit]);
+
+//   return (
+//     <>
+//       <select value={sort} onChange={(e) => setSort(e.target.value)}>
+//         <option value="asc">asc</option>
+//         <option value="desc">desc</option>
+//       </select>
+
+//       <input
+//         type="number"
+//         value={limit}
+//         onChange={(e) => setLimit(Number(e.target.value))}
+//       />
+
+//       <button onClick={getProduct}>click for products</button>
+
+//       <ul>
+//         {data.map((product: any) => (
+//           <li key={product.id}>{product.title}</li>
+//         ))}
+//       </ul>
+//     </>
+//   );
+// };
 
 
 
