@@ -14,6 +14,8 @@ export default () => {
             console.error('error', err)})
         }
 
+        useEffect(getProduct, [])
+
         return(
             <>
             <button onClick={getProduct}>click for products</button>
