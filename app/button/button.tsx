@@ -6,8 +6,8 @@ import { resourceLimits } from "worker_threads";
 
 export default () => {
     const [data, setData] = useState([])
-    const [sort, setSort] = useState('asc')
-    const [limit, setLimit] = useState(20)
+    const [sort, setSort] = useState(localStorage.getItem('sort') || 'asc')
+    const [limit, setLimit] = useState(localStorage.getItem('limit') || 20)
 
     const getProduct = () => {
         axios.get(`https://fakestoreapi.com/products?sort=${sort}&limit=${limit}`)
@@ -18,9 +18,18 @@ export default () => {
 
         useEffect(getProduct, [sort, limit])
 
+        const onSortChange = (e) => {
+            setSort(e.target.value)
+            localStorage.setItem('sort', e.target.value)
+        }
+        const onLimitChange = (e) => {
+            setLimit(e.target.value)
+            localStorage.setItem('limit', e.target.value)
+        }
+
         return(
             <>
-            <select value={sort} onChange={(e) => setSort(e.target.value)}>
+            <select value={sort} onChange={onSortChange}>
                 <option value="asc">asc</option>
                 <option value="desc">dsc</option>
             </select>
@@ -28,7 +37,7 @@ export default () => {
             <input 
                  type="number"
                  value={limit}
-                 onChange={(e) => setLimit(Number(e.target.value))} />
+                 onChange={onLimitChange} />
 
             <button onClick={getProduct}>click for products</button>
             <ul>
