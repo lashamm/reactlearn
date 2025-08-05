@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { RecoilRoot } from "recoil";
+import RecoilWrapper from "./RecoilWrapper/RecoilWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+
+          <RecoilWrapper>
+            {children}
+          </RecoilWrapper>
+
       </body>
     </html>
   );
